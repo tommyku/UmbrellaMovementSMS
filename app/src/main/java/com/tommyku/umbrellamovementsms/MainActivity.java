@@ -99,13 +99,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            Intent intent = new Intent(this, Settings.class);
-            // no need to put extra
-            startActivity(intent);
+        Intent intent;
+        switch (id) {
+            case R.id.action_settings:
+                intent = new Intent(this, Settings.class);
+                // no need to put extra
+                startActivity(intent);
+                break;
+            case R.id.shopping_warning:
+                intent = new Intent(this, Warning.class);
+                startActivity(intent);
+            default:
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

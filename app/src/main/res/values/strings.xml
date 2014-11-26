@@ -5,10 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">寫定個 SMS 先</string>
     <string name="shopping_warning">如果行街買野比警察拉要點做</string>
-
     <string name="set_sms_notice">禁右上角 menu 寫左個 SMS 先啦</string>
     <string name="send">Send SMS</string>
-
     <string name="title_activity_settings">寫定個 SMS 先</string>
     <string name="i_have_been_arrested">我已被捕</string>
     <string name="chin_name_hint">陳大文</string>
@@ -18,17 +16,19 @@
     <string name="tel">電話</string>
     <string name="tel_hint">91234567</string>
     <string name="submit">儲存</string>
+    <string name="i_want_true_democracy">我要真普選</string>
 
-    <string-array name="gender" >
+    <string-array name="gender">
         <item>男</item>
         <item>女</item>
         <item>其他</item>
     </string-array>
-
-
-    <string-array name="locations" >
+    <string-array name="locations">
         <item>金鐘區</item>
         <item>灣仔、銅鑼灣</item>
         <item>九龍區</item>
     </string-array>
+
+    <string name="title_activity_warning">Warning</string>
+
 </resources>
