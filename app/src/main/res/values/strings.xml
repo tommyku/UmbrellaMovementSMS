@@ -29,6 +29,12 @@
         <item>九龍區</item>
     </string-array>
 
+    <string-array name="lawyer">
+        <item>51642048</item>
+        <item>55191797</item>
+        <item>91463653</item>
+    </string-array>
+
     <string name="title_activity_warning">Warning</string>
 
 </resources>

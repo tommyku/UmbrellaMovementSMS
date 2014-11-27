@@ -32,6 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private SmsManager smsManager;
 
     private String msg = "";
+    private String phoneNo = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             ((TextView) findViewById(R.id.sample)).setText(msg);
 
+            String[] phoneNumList = getResources().getStringArray(R.array.lawyer);
+            String[] phoneLocationList = getResources().getStringArray(R.array.locations);
+            phoneNo = "";
+            for (int i=0; i< phoneLocationList.length; ++i) {
+                if (phoneLocationList[i].indexOf(location) >= 0) {
+                    phoneNo = phoneNumList[i];
+                    break;
+                }
+            }
+
             // display the preset message
             ((LinearLayout) findViewById(R.id.sms_sample)).setVisibility(View.VISIBLE);
         }
@@ -108,7 +119,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.shopping_warning:
                 intent = new Intent(this, Warning.class);
-                startActivity(intent);
+                startActivity(intent);            phoneNo = "";
             default:
                 break;
         }
@@ -135,7 +146,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             smsManager = SmsManager.getDefault();
             try {
-                // smsManager.sendTextMessage("-", null, msg, null, makeDeliveredIntent());
+                smsManager.sendTextMessage(phoneNo, null, msg, null, makeDeliveredIntent());
                 Toast.makeText(getApplicationContext(), "送出中!", Toast.LENGTH_LONG).show();
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "傳送失敗！", Toast.LENGTH_LONG).show();
